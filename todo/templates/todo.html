@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>todo list</title>
+		<style type="text/css">
+		span {
+		display:-moz-inline-box;
+		display:inline-block;
+		width:400px; 
+		}
+		</style>
+	</head>
+
+	<body style = "font-family:verdana;background:#F5F6CE">
+		<div class='' valign="center" style='width:600px;margin:0 auto'>
+		<h1><center>CFF Todo List</center></h1>
+		</div>
+		<div class='' valign="center" style='background:#BCF5A9;width:600px;margin:0 auto'>
+			{% for todo in lists %}
+			<div class='' style='height:30px;line-height:30px'>
+				<li>
+				<span class="" > {{ todo['content'] }} </span>
+				<a href="{{ url_for('delete',todo_id=todo['_id']) }}" >Done</a>
+				</li>				 
+			</div>
+			{% endfor %}
+		</div>
+			<form method="post">
+				<div class='' style='background:#F5A9F2;width:600px;height:40px; line-height:40px;margin:0 auto'>
+					<input type='text' name='content' placeholder='Enter your item' style='width:300px'>
+					<input type="submit">
+				</div>
+			</form>
+	</body>
+</html>
