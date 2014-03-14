@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>jinja2 {{ title }}</title>
+		<style>
+			.main{
+				border:1px solid #ccc;
+				margin:20px auto;
+				width:400px;
+				border-radius: 5px
+			}
+		</style>
+	</head>
+
+	<body>
+		<h3> Welcome {{ user }}</h3>
+		<div class="main">
+			<form method="post">
+				<div>
+					<label for="username">User name</label>
+					<input name="username" id="username"/>
+				</div>
+				<div>
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password"/>
+				</div>
+				<input type="submit">
+			</form>
+		</div>
+	</body>
+</html>
