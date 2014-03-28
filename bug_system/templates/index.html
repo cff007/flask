@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta  http-equiv='Content-Type' content='text/html;charset=utf-8' >
+	<title>BUG管理系统</title>
+</head>
+<body>
+	<p>BUG list</p>
+	<form name='new' action='/flask/bug_system/templates/create.html'>
+	<input type='submit' value='新建bug' >
+	</form>
+	<div>
+		<table border='0.5' width="1200px">
+		<tr>
+			<th>name</th>
+			<th>bug描述</th>
+			<th>创建者</th>
+			<th>编辑</th>
+			<th>删除</th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<th>aaaaaaaaaaaaadddddddddddddddd</th>
+			<th>Tom</th>
+			<th><form name='edit' action='/flask/bug_system/templates/edit.html'><input type='submit' value='编辑'/></form></th>
+			<th><input type='button' value='删除'/></th>
+		</table>
+	</div>
+</body>
+</html>

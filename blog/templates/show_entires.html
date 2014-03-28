@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+	{% if session.logged_in %}
+		<form action='{{ url_for('add') }}' method='post' class=add >
+			<dl>
+				<dt>Title:
+					<dd><input type=text size=30 name=title>
+				<dt>Text:
+					<dd><textarea name=text rows=5 cols=40></textarea>
+					<dd><input type=submit value=Share>
+			</dl>
+		</form>
+	{% endif %}
+	<ul class=entires>
+	{% for entry in entires %}
+		<li><h2>{{ entry['title'] }}</h2>{{ entry['text']|safe }}
+		<a href='{{ url_for('delete',entry_id=entry['_id']) }}'>delete</a>
+	{% else %}
+		<li><em>Unbelievable.No entires here so far</em>
+	{% endfor %}
+	</ul>
+{% endblock %}
