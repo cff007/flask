@@ -1,0 +1,5 @@
+先运行python db\seeds.py
+再运行python bug.py
+
+登录用户名：admin
+密码:123456
