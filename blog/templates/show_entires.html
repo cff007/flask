@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
 	{% if session.logged_in %}
-		<form action='{{ url_for('add') }}' method='post' class=add >
+		<form action='{{ url_for('add') }}' method='post' class='add' >
 			<dl>
 				<dt>Title:
 					<dd><input type=text size=30 name=title>
@@ -11,7 +11,7 @@
 			</dl>
 		</form>
 	{% endif %}
-	<ul class=entires>
+	<ul class='entires'>
 	{% for entry in entires %}
 		<li><h2>{{ entry['title'] }}</h2>{{ entry['text']|safe }}
 		<a href='{{ url_for('delete',entry_id=entry['_id']) }}'>delete</a>

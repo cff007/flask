@@ -1,19 +1,24 @@
-<html>
-<head>
-	<meta  http-equiv='Content-Type' content='text/html;charset=utf-8' >
-	<title>edit bug</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block body %}
+<form action='/update' method='post' enctype="multipart/form-data">
+	<div>
+	<input type="hidden" id='id' name="id" value="{{ post['_id'] }}" />
 	<p>编辑bug</p>
-	<p>bug标题：</p>
-	<input name='name' type='text' style='width:300px'/>
+	<p>bug名：</p>
+	<input name='name' id='name' type='text' style='width:300px' value='{{ post['name'] }}'/>
 	<p>bug描述：</p>
-	<input name='description' type='text' style='width:300px'/>
+	<textarea name='description' id='description' cols="30" rows="2">{{ post['description'] }}</textarea>
 	<p>创建者：</p>
-	<input name='owner' type='text' style='width:300px'/>
+	<input name='owner' id='owner' type='text' style='width:300px' value='{{ post['owner'] }}' />
 	<p>bug详情：</p>
-	<input name='details' type='text' style='width:300px;height:100px'/>
+	<textarea name='details' id='details' cols="30" rows="5">{{ post['details'] }}</textarea>
 	<br/>
-	<input type='button' value='保存'/>
-</body>
-</html>
+	<p>上传截图</p>
+	<input type='file' name='file' value='选择附件' />
+	<br/>
+	</div>	
+	<div>
+	<input type='submit' value='保存'/>
+	</div>
+</form>
+{% endblock %}

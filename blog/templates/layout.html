@@ -1,9 +1,9 @@
 <!doctype html>
 <title>Blog</title>
 <link rel=stylesheet type=text/css href='{{url_for('static',filename='style.css')}}'>
-<div class=page>
+<div class='page'>
 	<h1>Blog</h1>
-	<div class=metanav>
+	<div class='metanav'>
 		{% if not session.logged_in %}
 			<a href='{{ url_for('login') }}'>log in </a>
 		{% else %}
@@ -12,7 +12,7 @@
 	</div>
 	{% with messages = get_flashed_messages() %}
 		{% if messages %}
-		<div class=flashes>
+		<div class='flashes'>
 			{% for message in messages %}
 			{{ message }}
 			{% endfor %}
