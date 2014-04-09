@@ -102,10 +102,6 @@ def delete(post_id):
 	return redirect(url_for('index'))
 
 
-@app.route('/uploads/<filename>')
-def uploaded(filename):
-	return send_from_directory(os.path.join('uploads',filename))
-
 
 if __name__=='__main__':
 	app.run()
